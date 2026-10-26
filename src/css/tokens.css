@@ -32,3 +32,8 @@
   background: var(--bg);
   color: var(--text);
 }
+
+:root[data-theme='dark'] .eyebrow,
+:root[data-theme='dark'] .text-button {
+  color: #ff9699;
+}

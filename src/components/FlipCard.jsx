@@ -16,6 +16,7 @@ export default function FlipCard({
       style={style}
       aria-label={`${name}: ${flipped ? 'ocultar detalhes' : 'ver detalhes'}`}
       aria-pressed={flipped}
+      aria-describedby={flipped && id ? `${id}-details` : undefined}
       onClick={onFlip}
     >
       <span className="card-rotator">
@@ -27,6 +28,7 @@ export default function FlipCard({
           {front}
         </span>
         <span
+          id={id ? `${id}-details` : undefined}
           className="card-face card-back"
           aria-hidden={!flipped}
           inert={!flipped}

@@ -5,6 +5,7 @@ import { trainerImages, trainerFallback } from '../data/trainerImages.js';
 export default function TrainerCard({ trainer, pokemon, flipped, onFlip }) {
   return (
     <FlipCard
+      id={`trainer-${trainer.id}`}
       name={trainer.name}
       flipped={flipped}
       onFlip={onFlip}
