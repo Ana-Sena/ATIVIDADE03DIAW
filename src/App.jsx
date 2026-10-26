@@ -5,6 +5,7 @@ import PokemonToolbar from './components/PokemonToolbar.jsx';
 import PokemonCard from './components/PokemonCard.jsx';
 import TrainerCard from './components/TrainerCard.jsx';
 import TrainerPanel from './components/TrainerPanel.jsx';
+import useTheme from './hooks/useTheme.js';
 import { flipPokemon, globalStatMax, selectPokemon } from './utils/pokemonSelectors.js';
 import './css/tokens.css';
 import './css/global.css';
@@ -12,6 +13,7 @@ import './css/cards.css';
 import './css/trainers.css';
 const statMax = globalStatMax(data.pokemon);
 export default function App() {
+  const [theme, toggleTheme] = useTheme();
   const [tab, setTab] = useState('pokemon');
   const [filters, setFilters] = useState({ query: '', type: '', sort: 'id', direction: 'asc' });
   const [cards, setCards] = useState({ flipped: new Set(), panelId: null });
@@ -44,7 +46,7 @@ export default function App() {
   const clear = () => setFilters(previous => ({ ...previous, query: '', type: '' }));
   return <>
     <a className="skip-link" href="#main">Ir para o conteúdo</a>
-    <Header tab={tab} onTab={changeTab} theme="light" onTheme={() => {}} pokemonCount={data.pokemon.length} trainerCount={data.trainers.length} />
+    <Header tab={tab} onTab={changeTab} theme={theme} onTheme={toggleTheme} pokemonCount={data.pokemon.length} trainerCount={data.trainers.length} />
     <main id="main" className={context ? 'has-panel' : ''}>
       <div className="intro">
         <div><span className="eyebrow">Explore. Descubra. Colecione histórias.</span><h1>{tab === 'pokemon' ? 'Seu álbum Pokémon' : 'Os treinadores'}</h1><p>{tab === 'pokemon' ? 'Uma carta, uma descoberta. Vire para conhecer cada detalhe.' : 'Conheça as pessoas e as equipes por trás de cada jornada.'}</p></div>
