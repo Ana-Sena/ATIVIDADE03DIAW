@@ -102,6 +102,17 @@
   letter-spacing: 0;
 }
 
+.card-number > .element-mark.has-icon {
+  background: transparent;
+}
+
+.element-mark img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
 .flip-card:hover .card-face {
   box-shadow:
     0 0 0 2px #eee5d5,

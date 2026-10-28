@@ -2,34 +2,16 @@ import FlipCard from './FlipCard.jsx';
 import ImageWithFallback from './ImageWithFallback.jsx';
 import TypeBadge from './TypeBadge.jsx';
 import { artwork, formatId, statLabels } from '../utils/pokemonSelectors.js';
-
-// Símbolos decorativos; os nomes dos tipos continuam nas etiquetas acessíveis.
-const typeSymbols = {
-  Grass: '🌿',
-  Fire: '🔥',
-  Water: '💧',
-  Electric: '⚡',
-  Ice: '❄',
-  Fighting: '🥊',
-  Poison: '☠',
-  Ground: '⛰',
-  Flying: '🪽',
-  Psychic: '✦',
-  Bug: '🐛',
-  Rock: '🪨',
-  Ghost: '👻',
-  Dragon: '🐉',
-  Dark: '☾',
-  Steel: '⚙',
-  Fairy: '✿',
-  Normal: '✧',
-  Typeless: '◇',
-};
+import { typeIcons } from '../data/typeIcons.js';
 
 export default function PokemonCard({ pokemon, flipped, onFlip, statMax }) {
+  const icon = typeIcons[pokemon.types[0]?.name.toLowerCase()];
   const elementMark = (
-    <span className="element-mark" aria-hidden="true">
-      {typeSymbols[pokemon.types[0]?.name] || '◇'}
+    <span
+      className={`element-mark ${icon ? 'has-icon' : ''}`}
+      aria-hidden="true"
+    >
+      {icon ? <img src={icon} alt="" width="30" height="30" /> : '◇'}
     </span>
   );
   const heading = (

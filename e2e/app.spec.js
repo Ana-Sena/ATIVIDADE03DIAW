@@ -165,7 +165,7 @@ test('fallback de imagem, mensagem sem treinador e ausência de erros React', as
 }) => {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await expect(page.locator('#pokemon-1 .card-front img')).toHaveAttribute(
+  await expect(page.locator('#pokemon-1 .artwork-stage img')).toHaveAttribute(
     'src',
     '/images/pokemon-fallback.svg',
   );
@@ -260,7 +260,7 @@ test('URL oficial pode exibir imagem sem alterar os dados', async ({
     }),
   );
   await page.reload();
-  const img = page.locator('#pokemon-1 .card-front img');
+  const img = page.locator('#pokemon-1 .artwork-stage img');
   await expect(img).toHaveAttribute('src', /official-artwork\/1\.png$/);
   await expect
     .poll(() => img.evaluate((el) => el.complete && el.naturalWidth > 0))

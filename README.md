@@ -101,3 +101,9 @@ Preencher somente com os dados e a participação real de cada integrante:
 | 2 | A preencher | A preencher |
 
 O desenvolvimento mantém commits locais incrementais no formato Conventional Commits. Publicação, criação de remoto e push devem ser realizados pela dupla quando solicitado; nenhum desses passos faz parte da execução automática deste projeto.
+
+## Símbolos dos elementos
+
+Os símbolos dos 18 elementos foram recortados do PNG transparente fornecido pelo usuário (src/assets/images/Simbolos Elementos Pokemon (1).png). Os recortes de 70 × 70 pixels ficam em src/assets/images/types/, preservando cores e transparência. O mapeamento src/data/typeIcons.js associa os nomes dos arquivos ao tipo principal do JSON e substitui os emojis nas duas faces das cartas. Typeless e tipos vazios usam o símbolo neutro, pois não estão na imagem. A origem externa e a licença da imagem não foram informadas.
+
+Para reproduzir os recortes no Windows, execute `powershell -File scripts/crop-type-icons.ps1`. O script valida as dimensões da imagem original e não altera seu conteúdo.
