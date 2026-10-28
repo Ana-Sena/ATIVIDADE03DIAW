@@ -59,7 +59,7 @@ export default function PokemonCard({ pokemon, flipped, onFlip, statMax }) {
           </span>
           <strong className="card-name">{pokemon.name}</strong>
           <TypeBadge types={pokemon.types} />
-          <span className="card-hint">↻ Clique para virar</span>
+          <span className="card-hint">↻ Ver atributos</span>
         </>
       }
       back={
@@ -82,7 +82,7 @@ export default function PokemonCard({ pokemon, flipped, onFlip, statMax }) {
               </span>
             ))}
           </span>
-          <span className="card-hint">↻ Clique para desvirar</span>
+          <span className="card-hint">↻ Ocultar atributos</span>
         </>
       }
     />

@@ -5,8 +5,8 @@
   border: 0;
   background: none;
   width: 100%;
-  height: 380px;
-  text-align: left;
+  height: 408px;
+  text-align: center;
   perspective: 1100px;
   border-radius: 16px;
   transition: transform 0.2s;
@@ -30,7 +30,7 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 19px 20px;
   background: linear-gradient(
     145deg,
@@ -124,6 +124,7 @@
 }
 .types {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
 }
@@ -194,6 +195,20 @@
   padding-top: 14px;
   letter-spacing: 0.3px;
 }
+
+.pokemon-card .card-hint {
+  width: calc(100% + 40px);
+  margin-inline: -20px;
+  margin-bottom: -19px;
+  padding: 12px;
+  min-height: 44px;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--accent) 28%, var(--surface));
+  border-top: 1px solid color-mix(in srgb, var(--accent) 40%, var(--surface));
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+}
 .stats {
   display: flex;
   flex-direction: column;
@@ -207,6 +222,7 @@
   font-size: 11px;
   gap: 8px;
   margin-bottom: 4px;
+  text-align: left;
 }
 .stat-heading strong {
   font-variant-numeric: tabular-nums;
@@ -232,58 +248,58 @@
   padding-top: 8px;
 }
 .accent-grass {
-  --accent: #6c9c4b;
+  --accent: #78b94a;
 }
 .accent-fire {
-  --accent: #df8050;
+  --accent: #f08030;
 }
 .accent-water {
-  --accent: #5c9acb;
+  --accent: #6890f0;
 }
 .accent-poison {
-  --accent: #a075ba;
+  --accent: #a040a0;
 }
 .accent-electric {
-  --accent: #c7a72d;
+  --accent: #e5bf24;
 }
 .accent-ground {
-  --accent: #ab9464;
+  --accent: #d1b05c;
 }
 .accent-flying {
-  --accent: #8e8fbe;
+  --accent: #a890f0;
 }
 .accent-psychic {
-  --accent: #ce779d;
+  --accent: #f05888;
 }
 .accent-fighting {
-  --accent: #bd7669;
+  --accent: #c03028;
 }
 .accent-steel {
-  --accent: #7b879c;
+  --accent: #9a9ab3;
 }
 .accent-normal {
-  --accent: #b58e9f;
+  --accent: #96999e;
 }
 .accent-bug {
-  --accent: #92a845;
+  --accent: #a0b820;
 }
 .accent-ice {
-  --accent: #58b7bd;
+  --accent: #70c8c8;
 }
 .accent-ghost {
-  --accent: #8273ae;
+  --accent: #705898;
 }
 .accent-rock {
-  --accent: #a59160;
+  --accent: #b8a038;
 }
 .accent-dragon {
-  --accent: #8274cc;
+  --accent: #7050d8;
 }
 .accent-fairy {
   --accent: #dc8fb5;
 }
 .accent-dark {
-  --accent: #827681;
+  --accent: #705848;
 }
 @media (prefers-reduced-motion: reduce) {
   .card-rotator,
