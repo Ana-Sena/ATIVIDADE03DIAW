@@ -47,7 +47,11 @@ Ilustrações: [repositório de sprites da PokéAPI](https://github.com/PokeAPI/
 
 Não há consulta aos metadados da API: as URLs são derivadas do ID e o cache de imagens é o cache HTTP do navegador, conforme os cabeçalhos do servidor. Imagens têm carregamento tardio e fallback local com prevenção de loops; a consulta dos dados funciona mesmo sem conexão após carregar o aplicativo.
 
-**Todos os 12 retratos de treinadores são provisórios.** O avatar genérico e o fallback Pokémon são SVGs locais criados para este projeto. Para substituir retratos, adicione arquivos com o ID do treinador em `src/assets/images/trainers/`, por exemplo `1.png` para Ash. Formatos aceitos: png, jpg, jpeg, webp e svg. O mapeamento em `src/data/trainerImages.js` incorpora esses arquivos no build. Registre aqui a fonte e a licença dos retratos adicionados.
+Os 12 retratos de treinadores fornecidos pelo usuário estão em `src/assets/images/Treinadores/`, associados explicitamente aos IDs do JSON em `src/data/trainerImages.js` e usados nas cartas e no painel. A imagem de Team Rocket representa o grupo. A fonte original e a licença dessas imagens não foram informadas; esses campos ficam pendentes de preenchimento pela dupla.
+
+![Cartas dos 12 treinadores com os retratos fornecidos](docs/trainers-desktop.png)
+
+O avatar genérico continua como fallback em caso de falha. Ele e o fallback Pokémon são SVGs locais criados para este projeto. Para substituir um retrato, adicione um arquivo com o ID do treinador em `src/assets/images/trainers/`, por exemplo `1.png` para Ash. Formatos aceitos: png, jpg, jpeg, webp e svg. Esses arquivos por ID têm prioridade sobre os retratos por nome. O Vite incorpora as imagens no build.
 
 ID de Pokémon inexistente em uma equipe recebe nome identificável e fallback, preservando sua posição. Repetições têm chaves compostas por treinador, posição e ID; não duplicam o perfil inteiro no painel.
 
@@ -55,6 +59,7 @@ ID de Pokémon inexistente em uma equipe recebe nome identificável e fallback, 
 
 ```text
 src/
+  assets/images/Treinadores/ Retratos fornecidos por nome (12 treinadores)
   assets/images/trainers/  Retratos locais opcionais por ID
   components/              Cabeçalho, controles, cartas, equipes e painel
   css/                     Tokens e estilos de layout, cartas e treinadores
