@@ -12,8 +12,9 @@
 .trainer-portrait img {
   width: 185px;
   height: 185px;
-  object-fit: contain;
-  border-radius: 14px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--soft);
 }
 .trainer-subtitle {
   font-size: 12px;
@@ -118,7 +119,7 @@
 .profile-heading img {
   height: 48px;
   width: 48px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
   background: var(--soft);
 }
