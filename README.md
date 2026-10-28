@@ -27,6 +27,7 @@ O build fica em `dist/`. O preview normalmente usa **http://127.0.0.1:4173**. Os
 - Busque pelo nome parcial ou por ID exato: `25`, `025` e `#025` encontram Pikachu. Espaços externos e maiúsculas são ignorados.
 - Combine busca com tipo, inclusive tipos secundários, e ordene por número, nome ou qualquer um dos seis atributos, nos dois sentidos. Empates usam ID crescente. “Limpar filtros” preserva a ordenação.
 - Clique, Enter ou Espaço vira/desvira cada carta independentemente. Hover apenas destaca. Os versos mostram os seis valores originais e barras na mesma escala global, mesmo com filtros ativos.
+- As duas faces usam uma moldura colorida com contorno claro e brilho. A cor e o símbolo decorativo dos Pokémon acompanham o tipo principal; treinadores usam vermelho. A área da ilustração também recebe um fundo suave na cor do tipo.
 - A última carta Pokémon virada abre o painel de treinadores. Virar outra troca o contexto sem desvirar a anterior. Desvirar a carta vinculada fecha o painel; desvirar outra não interfere.
 - X/Escape fecha apenas o painel. Escape e o fechamento por teclado devolvem foco à carta vinculada. O painel não é modal, não captura foco e não tem temporizador.
 - Filtrar a carta vinculada para fora da lista ou trocar de aba fecha o painel. As viradas são preservadas; nenhum perfil anterior reabre automaticamente. Para reabrir o perfil de uma carta já virada, desvire e vire novamente.

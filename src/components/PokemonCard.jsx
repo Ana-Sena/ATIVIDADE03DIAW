@@ -3,11 +3,39 @@ import ImageWithFallback from './ImageWithFallback.jsx';
 import TypeBadge from './TypeBadge.jsx';
 import { artwork, formatId, statLabels } from '../utils/pokemonSelectors.js';
 
+// Símbolos decorativos; os nomes dos tipos continuam nas etiquetas acessíveis.
+const typeSymbols = {
+  Grass: '🌿',
+  Fire: '🔥',
+  Water: '💧',
+  Electric: '⚡',
+  Ice: '❄',
+  Fighting: '🥊',
+  Poison: '☠',
+  Ground: '⛰',
+  Flying: '🪽',
+  Psychic: '✦',
+  Bug: '🐛',
+  Rock: '🪨',
+  Ghost: '👻',
+  Dragon: '🐉',
+  Dark: '☾',
+  Steel: '⚙',
+  Fairy: '✿',
+  Normal: '✧',
+  Typeless: '◇',
+};
+
 export default function PokemonCard({ pokemon, flipped, onFlip, statMax }) {
+  const elementMark = (
+    <span className="element-mark" aria-hidden="true">
+      {typeSymbols[pokemon.types[0]?.name] || '◇'}
+    </span>
+  );
   const heading = (
     <>
       <span className="card-number">
-        {formatId(pokemon.id)} <span aria-hidden="true">✦</span>
+        {formatId(pokemon.id)} {elementMark}
       </span>
       <strong className="card-name">{pokemon.name}</strong>
       <TypeBadge types={pokemon.types} />
@@ -24,7 +52,7 @@ export default function PokemonCard({ pokemon, flipped, onFlip, statMax }) {
         <>
           <span className="card-number">
             {formatId(pokemon.id)}
-            <span aria-hidden="true">◇</span>
+            {elementMark}
           </span>
           <span className="artwork-stage">
             <ImageWithFallback src={artwork(pokemon.id)} alt={pokemon.name} />

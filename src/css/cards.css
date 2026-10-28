@@ -5,7 +5,7 @@
   border: 0;
   background: none;
   width: 100%;
-  height: 356px;
+  height: 380px;
   text-align: left;
   perspective: 1100px;
   border-radius: 16px;
@@ -32,11 +32,18 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 19px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--accent);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent) 18%, var(--surface)),
+    var(--surface) 48%,
+    color-mix(in srgb, var(--accent) 12%, var(--surface))
+  );
+  border: 8px solid color-mix(in srgb, var(--accent) 78%, var(--surface));
+  border-radius: 18px;
+  box-shadow:
+    0 0 0 2px #eee5d5,
+    inset 0 0 0 2px color-mix(in srgb, var(--accent) 30%, var(--surface)),
+    0 5px 16px color-mix(in srgb, var(--accent) 22%, transparent);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   overflow: hidden;
@@ -70,11 +77,36 @@
 .artwork-stage:before {
   content: '';
   position: absolute;
-  width: 155px;
-  height: 155px;
+  inset: 4px 0;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 20% 15%, #ffffff90, transparent 55%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent) 30%, var(--surface)),
+      color-mix(in srgb, var(--accent) 10%, var(--surface))
+    );
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--surface));
+}
+
+.card-number > .element-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-top: -7px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 13%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+  background: color-mix(in srgb, var(--accent) 25%, var(--surface));
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.flip-card:hover .card-face {
+  box-shadow:
+    0 0 0 2px #eee5d5,
+    inset 0 0 0 2px color-mix(in srgb, var(--accent) 30%, var(--surface)),
+    0 8px 24px color-mix(in srgb, var(--accent) 38%, transparent);
 }
 .artwork-stage img {
   width: 100%;
@@ -199,42 +231,59 @@
 .card-back .card-hint {
   padding-top: 8px;
 }
-.accent-grass,
-.accent-bug {
+.accent-grass {
   --accent: #6c9c4b;
 }
 .accent-fire {
   --accent: #df8050;
 }
-.accent-water,
-.accent-ice {
+.accent-water {
   --accent: #5c9acb;
 }
-.accent-poison,
-.accent-ghost {
+.accent-poison {
   --accent: #a075ba;
 }
 .accent-electric {
   --accent: #c7a72d;
 }
-.accent-ground,
-.accent-rock {
+.accent-ground {
   --accent: #ab9464;
 }
-.accent-flying,
-.accent-dragon {
+.accent-flying {
   --accent: #8e8fbe;
 }
-.accent-psychic,
-.accent-fairy {
+.accent-psychic {
   --accent: #ce779d;
 }
 .accent-fighting {
   --accent: #bd7669;
 }
-.accent-dark,
 .accent-steel {
   --accent: #7b879c;
+}
+.accent-normal {
+  --accent: #b58e9f;
+}
+.accent-bug {
+  --accent: #92a845;
+}
+.accent-ice {
+  --accent: #58b7bd;
+}
+.accent-ghost {
+  --accent: #8273ae;
+}
+.accent-rock {
+  --accent: #a59160;
+}
+.accent-dragon {
+  --accent: #8274cc;
+}
+.accent-fairy {
+  --accent: #dc8fb5;
+}
+.accent-dark {
+  --accent: #827681;
 }
 @media (prefers-reduced-motion: reduce) {
   .card-rotator,
