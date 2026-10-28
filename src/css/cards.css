@@ -38,7 +38,7 @@
     var(--surface) 48%,
     color-mix(in srgb, var(--accent) 12%, var(--surface))
   );
-  border: 8px solid color-mix(in srgb, var(--accent) 78%, var(--surface));
+  border: 8px solid var(--accent);
   border-radius: 18px;
   box-shadow:
     0 0 0 2px #eee5d5,
@@ -259,58 +259,58 @@
   padding-top: 8px;
 }
 .accent-grass {
-  --accent: #78b94a;
+  --accent: #3c9a23;
 }
 .accent-fire {
-  --accent: #f08030;
+  --accent: #e9262c;
 }
 .accent-water {
-  --accent: #6890f0;
+  --accent: #2980ef;
 }
 .accent-poison {
-  --accent: #a040a0;
+  --accent: #8f3dc9;
 }
 .accent-electric {
-  --accent: #e5bf24;
+  --accent: #f6b900;
 }
 .accent-ground {
-  --accent: #d1b05c;
+  --accent: #904e23;
 }
 .accent-flying {
-  --accent: #a890f0;
+  --accent: #80b6f3;
 }
 .accent-psychic {
-  --accent: #f05888;
+  --accent: #ef4079;
 }
 .accent-fighting {
-  --accent: #c03028;
+  --accent: #ff7f00;
 }
 .accent-steel {
-  --accent: #9a9ab3;
+  --accent: #599cb1;
 }
 .accent-normal {
-  --accent: #96999e;
+  --accent: #9f9f9d;
 }
 .accent-bug {
-  --accent: #a0b820;
+  --accent: #879e12;
 }
 .accent-ice {
-  --accent: #70c8c8;
+  --accent: #3ad9ff;
 }
 .accent-ghost {
-  --accent: #705898;
+  --accent: #6f4170;
 }
 .accent-rock {
-  --accent: #b8a038;
+  --accent: #afa783;
 }
 .accent-dragon {
-  --accent: #7050d8;
+  --accent: #4b64db;
 }
 .accent-fairy {
-  --accent: #dc8fb5;
+  --accent: #ec6ff3;
 }
 .accent-dark {
-  --accent: #705848;
+  --accent: #50413a;
 }
 @media (prefers-reduced-motion: reduce) {
   .card-rotator,
